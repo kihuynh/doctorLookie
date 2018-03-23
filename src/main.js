@@ -6,7 +6,9 @@ import { Doctor } from './doctor.js';
 const displayDoctor = response => {
   response.data.forEach(data => {
     console.log(data);
-    $('#doctors').append(`<li>${data.profile.first_name}${data.profile.last_name}</li>`)
+    console.log(data.profile);
+    console.log(data.practices.name);
+    $('#doctors').append(`<li>${data.profile.first_name} ${data.profile.last_name}</li>`)
   })
 }
 
