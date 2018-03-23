@@ -7,8 +7,9 @@ const displayDoctor = response => {
   response.data.forEach(data => {
     console.log(data);
     console.log(data.profile);
-    console.log(data.practices.name);
-    $('#doctors').append(`<li>${data.profile.first_name} ${data.profile.last_name}</li>`)
+    console.log(data.practices[0]);
+    console.log(data.practices[0].name);
+    $('#doctors').append(`<li>${data.profile.first_name} ${data.profile.last_name}${data.practices[0].name}</li>`)
   })
 }
 

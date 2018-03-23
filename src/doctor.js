@@ -8,7 +8,7 @@ export class Doctor {
       displayDoctor(response);
     })
     .fail(() => {
-      'unable to complete'
+      $('#error').text("Error")
     });
   }
 }
