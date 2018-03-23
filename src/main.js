@@ -5,7 +5,8 @@ import { Doctor } from './doctor.js';
 
 const displayDoctor = response => {
   response.data.forEach(data => {
-    $('#doctors').append(`<li>${data.profile.first_name}</li>`)
+    console.log(data);
+    $('#doctors').append(`<li>${data.profile.first_name}${data.profile.last_name}</li>`)
   })
 }
 
@@ -13,8 +14,8 @@ const displayDoctor = response => {
 $(document).ready(function() {
   $('#doc-finder').click(e => {
   e.preventDefault();
-  let userInput = $('doctor-find').val();
+  let userInput = $('#doctor-find').val();
   Doctor.prototype.getDoctors(userInput, displayDoctor)
-  $('#doctors').empty
+  $('#doctors').empty();
 });
 });
