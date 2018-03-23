@@ -5,12 +5,16 @@ import { Doctor } from './doctor.js';
 
 const displayDoctor = response => {
   response.data.forEach(data => {
+    let firstName = data.profile.first_name;
+    let lastName = data.profile.last_name;
+    let street = data.practices[0].visit_address.street;
+    let state = data.practices[0].visit_address.state;
+    let zip = data.practices[0].visit_address.zip;
+    let phone = data.practices[0].phones[0].number;
     console.log(data);
     console.log(data.practices[0].accepts_new_patients);
-    $('#doctors').append(`<li>
-      ${data.profile.first_name} ${data.profile.last_name} <br> ${data.practices[0].visit_address.street} <br>
-      ${data.practices[0].visit_address.city}, ${data.practices[0].visit_address.state}, ${data.practices[0].visit_address.zip} <br>
-      ${data.practices[0].phones[0].number}</li>`)
+
+      $('#doctors').append(`<li>` + firstName + " " + lastName + " " + `<br>` + street + `<br>` + state + " " + zip + `<br>` + phone + `</li>`)
   })
 }
 
