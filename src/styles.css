@@ -1,0 +1,30 @@
+body {
+  background-color: #d0d0d2;
+}
+
+h1  {
+  text-align: center;
+}
+
+.find-form {
+  margin-top: 20px;
+}
+#label-name {
+  text-align: center;
+  margin: 0 0 20px 0;
+  display: block;
+}
+form {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+ol {
+  padding: 0;
+}
+li {
+  text-align: center;
+  list-style-type: none;
+  margin: 10px 0 10px 0;
+}
