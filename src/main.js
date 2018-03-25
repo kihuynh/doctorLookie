@@ -11,12 +11,16 @@ const displayDoctor = response => {
     let state = data.practices[0].visit_address.state;
     let zip = data.practices[0].visit_address.zip;
     let phone = data.practices[0].phones[0].number;
+    let website = data.practices[0].website;
     console.log(data);
     console.log(data.practices[0].accepts_new_patients);
+    // add website (rarely occurs), accepts if new patients,
 
-      $('#doctors').append(`<li>` + firstName + " " + lastName + " " + `<br>` + street + `<br>` + state + " " + zip + `<br>` + phone + `</li>`)
+      $('#doctors').append(`<li>`
+        + firstName + " " + lastName + " " + `<br>` + street + `<br>` + state + " " + zip + `<br>` + phone + `<br>` + website + `</li>`)
   })
 }
+
 
 
 $(document).ready(function() {
