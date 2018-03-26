@@ -5,7 +5,7 @@ import { Doctor } from './doctor.js';
 
 const displayDoctor = response => {
   if (response.data.length == 0 ) {
-    $('#doctors').text("There is no match with your search")
+    $('.list-doctors').text("There is no match with your search")
   } else {
     response.data.forEach(data => {
       let firstName = data.profile.first_name;
@@ -18,12 +18,17 @@ const displayDoctor = response => {
       let patients = data.practices[0].accepts_new_patients;
 
       $('#doctors').append(`<li>`
-        + firstName + " " + lastName + " " + `<br>` + street + `<br>` + state + " " + zip + `<br>` + phone + `<br>` + website + `<br>` + "Accepting new patients?: " + patients + `</li>`)
-  })
+        + firstName + " "
+        + lastName + " " + `<br>`
+        + street + `<br>`
+        + state + " "
+        + zip + `<br>`
+        + phone + `<br>`
+        + website + `<br>`
+        + "Accepting new patients?: " + patients + `</li>`)
+    })
   }
 }
-
-
 
 $(document).ready(function() {
   $('#doc-finder').click(e => {
@@ -31,5 +36,5 @@ $(document).ready(function() {
   let userInput = $('#doctor-find').val();
   Doctor.prototype.getDoctors(userInput, displayDoctor)
   $('#doctors').empty();
-});
+  });
 });

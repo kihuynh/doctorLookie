@@ -9,7 +9,7 @@ export class Doctor {
       displayDoctor(response);
     })
     .fail(() => {
-      $('#error').text("Unable to search.")
+      $('#error').text("An error has occured.")
     });
   }
 }
